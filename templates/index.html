@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herb Medicine Finder</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Herb Medicine Finder</h1>
+    <form id="herbForm">
+        <label for="symptom">Symptom:</label>
+        <select id="symptom" name="symptom">
+            {% for symptom in symptoms %}
+            <option value="{{ symptom }}">{{ symptom }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="herb_id">Herb ID:</label>
+        <select id="herb_id" name="herb_id">
+            {% for herb_id in herb_ids %}
+            <option value="{{ herb_id }}">{{ herb_id }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Get Medicine Formulation</button>
+    </form>
+
+    <div id="result">
+        <p id="formulation"></p>
+        <p id="herb_name"></p>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
