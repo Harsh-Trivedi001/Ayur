@@ -3,14 +3,14 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# Load data from the Ayurveda CSV file
+
 df = pd.read_csv('Ayurveda.csv')
 
-# List of unique symptoms and herbs
+
 symptoms = df['Symptoms'].unique().tolist()
 herbs = df['Herbs_ID'].unique().tolist()
 
-# Dictionary to map Herb IDs to their names
+
 herb_names = {
     1: "Agastya",
     2: "Amalaki",
